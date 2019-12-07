@@ -1,11 +1,10 @@
 package ru.asic.dialog.chatEngine.ui.model;
 
-import com.bluelinelabs.logansquare.LoganSquare;
-import com.bluelinelabs.logansquare.annotation.JsonField;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class TestGetter {
 
@@ -27,13 +26,7 @@ public class TestGetter {
         }
 
         for (TestJSON element: elements) {
-            System.out.println(element.getId() + " " + element.getTypeOfElement());
+            System.out.println(element.id + " " + element.type + " " + Arrays.toString(element.linksID));
         }
-//        String jsonString = "{\"id\":\"ident\",\"name\":\"Artem\"}";
-////        TestJSON testJSON = LoganSquare.parse(jsonString, TestJSON.class);
-////        System.out.println(testJSON.getId());
-//        ObjectMapper mapper = new ObjectMapper();
-//        JsonTest jsonTest = mapper.readValue(jsonString, JsonTest.class);
-//        System.out.println(jsonTest.id + " " + jsonTest.name);
     }
 }
