@@ -13,7 +13,7 @@ public class ConfigReader {
         this.localePath = localePath;
     }
 
-    public ArrayList<ChatElement> readChatElementsFromConfig(String configPath, String localePath) throws IOException {
+    public static ArrayList<ChatElement> readChatElementsFromConfig(String configPath, String localePath) throws IOException {
         ArrayList<ChatElement> chatElements = new ArrayList<>();
         ArrayList<ItemParams> items = new ArrayList<>();
         ArrayList<LocateParams> locates = new ArrayList<>();
@@ -35,12 +35,12 @@ public class ConfigReader {
         }
         reader.close();
         for (ItemParams item: items) {
-            chatElements.add(new ChatElement(item.type, item.id, getTextFromLocate(item.id, locates), item.linksID));
+            chatElements.add(new ChatElement(item.type, item.id, getTextFromLocale(item.id, locates), item.linksID));
         }
         return chatElements;
     }
 
-    private String getTextFromLocate(String itemID, ArrayList<LocateParams> locates) {
+    private static String getTextFromLocale(String itemID, ArrayList<LocateParams> locates) {
         String text = "";
         for (LocateParams locate: locates) {
             if (locate.id.equals(itemID)) {
