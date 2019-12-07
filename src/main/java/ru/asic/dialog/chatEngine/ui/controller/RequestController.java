@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.asic.dialog.chatEngine.ui.model.ChatElement;
+import ru.asic.dialog.chatEngine.ui.model.Container;
 import ru.asic.dialog.chatEngine.ui.model.TypeOfElement;
 
 import java.awt.*;
@@ -14,12 +15,16 @@ import java.awt.*;
 public class RequestController {
 
     @PostMapping(path="/init")
-    public ChatElement initLanguage() {
+    public Container initLanguage() {
         ChatElement resultElement = new ChatElement(TypeOfElement.MESSAGE, "m_init","", new String[] {"m_init"});
+        ChatElement[] elements = new ChatElement[2];
+        elements[0] = new ChatElement(TypeOfElement.BUTTON, "RU", "Русский", new String[] {"m_init"});
+        elements[1] = new ChatElement(TypeOfElement.BUTTON, "EN", "English", new String[] {"m_init"});
         String configFolderPath;
         String scriptInitFilename;
+        Container container = new Container(resultElement, elements);
 
-        return resultElement;
+        return container;
     }
     //public ChatElement  // locale
 
