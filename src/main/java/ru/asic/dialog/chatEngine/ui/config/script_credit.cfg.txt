@@ -1,0 +1,26 @@
+id: "buttonRU"; text:"Русский"; linksID["messageInit"]
+id: "buttonEN"; text:"English"; linksID["messageInit"]
+
+id: "messageProduct"; linksID["buttonRU", "buttonEN", "buttonProductConfirmNo"]
+id: "buttonDeposit"; linksID["messageProduct"]
+id: "buttonCredit"; linksID["messageProduct"]
+
+id: "messageProductConfirm"; linksID["buttonDeposit", "buttonCredit"]
+id: "buttonProductConfirmYes"; linksID["messageProductConfirm"]
+id: "buttonProductConfirmNo"; linksID["messageProductConfirm"]
+
+id: "messageCurrency"; linksID["buttonProductConfirmYes"]
+id: "buttonRUR"; linksID["messageCurrency"]
+id: "buttonUSD"; linksID["messageCurrency"]
+id: "buttonEUR"; linksID["messageCurrency"]
+
+id: "messageLongTerm"; linksID["buttonRUR", "buttonUSD", "buttonEUR"]
+id: "numberfieldDays"; linksID["messageLongTerm"]
+id: "numberfieldMonths"; linksID["messageLongTerm"]
+id: "numberfieldYears"; linksID["messageLongTerm"]
+id: "buttonLongTermSubmit"; linkID["messageLongTerm"]
+
+id: "messageSumm"; linksID["buttonLongTermSubmit"]
+id: "numberfieldSumm"; linksID["messageSumm"]
+id: "buttonSummSubmit"; linksID["messageSumm"] 
+
