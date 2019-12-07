@@ -23,6 +23,7 @@ public class RequestController {
     }
     //public ChatElement  // locale
 
+
     @PostMapping(path="/{langSetting}/messages/{messageId}")
     public String getMessageById(@PathVariable("langSetting") String langSetting,
                                  @PathVariable("messageId") String messageId) {
