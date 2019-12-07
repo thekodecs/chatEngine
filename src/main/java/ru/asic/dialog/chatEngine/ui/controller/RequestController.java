@@ -16,10 +16,10 @@ public class RequestController {
 
     @PostMapping(path="/init")
     public Container initLanguage() {
-        ChatElement resultElement = new ChatElement(TypeOfElement.MESSAGE, "m_init","", new String[] {"m_init"});
+        ChatElement resultElement = new ChatElement(TypeOfElement.MESSAGE, "init","", new String[] {"init"});
         ChatElement[] elements = new ChatElement[2];
-        elements[0] = new ChatElement(TypeOfElement.BUTTON, "RU", "Русский", new String[] {"m_init"});
-        elements[1] = new ChatElement(TypeOfElement.BUTTON, "EN", "English", new String[] {"m_init"});
+        elements[0] = new ChatElement(TypeOfElement.BUTTON, "RU", "Русский", new String[] {"init"});
+        elements[1] = new ChatElement(TypeOfElement.BUTTON, "EN", "English", new String[] {"init"});
         String configFolderPath;
         String scriptInitFilename;
         Container container = new Container(resultElement, elements);
