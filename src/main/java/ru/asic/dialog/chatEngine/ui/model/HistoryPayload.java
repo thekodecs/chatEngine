@@ -6,7 +6,7 @@ import java.util.Date;
 public class HistoryPayload {
     private String language;
     private String buttonID;
-    private Long messageReceivedAt = new Date().getTime();
+    private String timestampId = new Date().getTime() + "";
 
     public String getLanguage() {
         return language;
@@ -20,8 +20,8 @@ public class HistoryPayload {
         return buttonID;
     }
 
-    public Long getMessageReceivedAt() {
-        return messageReceivedAt;
+    public String getMessageReceivedAt() {
+        return timestampId;
     }
 
     public void setButtonID(String buttonID) {
