@@ -28,7 +28,7 @@ public class RequestController {
 
     @PostMapping(path="/test")
     public Container initTest() {
-        ChatElement resultElement = new ChatElement(TypeOfElement.MESSAGE, "init","Выберите язык / Choose your language", new String[] {"init"});
+        ChatElement resultElement = new ChatElement(TypeOfElement.MESSAGE, "init","Выберите язык (Choose your language)", new String[] {"init"});
         ChatElement[] elements = new ChatElement[2];
         elements[0] = new ChatElement(TypeOfElement.BUTTON, "RU", "Русский", new String[] {"init"});
         elements[1] = new ChatElement(TypeOfElement.BUTTON, "EN", "English", new String[] {"init"});
