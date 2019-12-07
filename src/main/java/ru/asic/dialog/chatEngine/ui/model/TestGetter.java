@@ -1,9 +1,7 @@
 package ru.asic.dialog.chatEngine.ui.model;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class TestGetter {
 
@@ -20,17 +18,5 @@ public class TestGetter {
         for (ChatElement chatElement: chatElements) {
             System.out.println(chatElement.toString());
         }
-//        ArrayList<TestJSON> elements = new ArrayList<>();
-//        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
-//        ObjectMapper mapper = new ObjectMapper();
-//        while (reader.ready()) {
-//            String jsonString = reader.readLine();
-//            TestJSON testJSON = mapper.readValue(jsonString, TestJSON.class);
-//            elements.add(testJSON);
-//        }
-//
-//        for (TestJSON element: elements) {
-//            System.out.println(element.id + " " + element.type + " " + Arrays.toString(element.linksID));
-//        }
     }
 }
