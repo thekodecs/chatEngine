@@ -24,13 +24,6 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.bluelinelabs/logansquare -->
-		<dependency>
-			<groupId>com.bluelinelabs</groupId>
-			<artifactId>logansquare</artifactId>
-			<version>1.3.7</version>
-		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>

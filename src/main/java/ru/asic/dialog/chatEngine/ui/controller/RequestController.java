@@ -1,11 +1,9 @@
 package ru.asic.dialog.chatEngine.ui.controller;
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.asic.dialog.chatEngine.ui.model.ChatElement;
 import ru.asic.dialog.chatEngine.ui.model.Container;
+import ru.asic.dialog.chatEngine.ui.model.HistoryPayload;
 import ru.asic.dialog.chatEngine.ui.model.TypeOfElement;
 
 import java.awt.*;
@@ -13,6 +11,11 @@ import java.awt.*;
 @RestController
 @RequestMapping("request") // http://localhost:8080/request
 public class RequestController {
+
+    @PostMapping()
+    public void appendMessageToHistory (@RequestBody HistoryPayload clickedMessagePayload) {
+        System.out.println(clickedMessagePayload.getMessageReceivedAt());
+    }
 
     @PostMapping(path="/init")
     public Container initLanguage() {

@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import com.bluelinelabs.logansquare.*;
 
 public class ConfigReader {
     private String configPath;
