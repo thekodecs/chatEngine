@@ -6,6 +6,8 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import ru.asic.dialog.chatEngine.ui.model.payloads.HistoryPayload;
 
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class HistoryJSON {
@@ -22,7 +24,7 @@ public class HistoryJSON {
 
     public static ArrayList<HistoryPayload> historyToJson ()  throws IOException {
         ArrayList<HistoryPayload> historyList = new ArrayList<>();
-        BufferedReader historyReader = new BufferedReader(new FileReader(historyFilePath));
+        BufferedReader historyReader = new BufferedReader(new InputStreamReader(new FileInputStream(historyFilePath), StandardCharsets.UTF_8));
         ObjectMapper mapper = new ObjectMapper();
         ArrayNode arrayNode = mapper.createArrayNode();
         String line;
