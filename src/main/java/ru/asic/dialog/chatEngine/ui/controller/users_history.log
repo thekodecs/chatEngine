@@ -1,2 +1,2 @@
-{"language":"ru","type":"MESSAGE","messageId":"card_productConfirm","messageReceivedAt":"1575792951215","messageText":"Вы хотите получить карту, верно?","chatElementId":"card_productConfirmYes","userAnswerText":"Да"},
-{"language":"Ru","type":"MESSAGE","messageId":"card_productConfirm","messageReceivedAt":"1575794314329","messageText":"Вы хотите получить карту, верно?","chatElementId":"card_productConfirmYes","userAnswerText":"Да"},
+{"language":"En","type":"MESSAGE","messageId":"init_init","messageReceivedAt":"1575796898841","messageText":"Выберите язык / Choose your language","chatElementId":"init_EN","userAnswerText":"English"},
+{"language":"En","type":"MESSAGE","messageId":"init_product","messageReceivedAt":"1575796946300","messageText":"Which product do you want to acquire?","chatElementId":"init_card","userAnswerText":"Credit card"},
