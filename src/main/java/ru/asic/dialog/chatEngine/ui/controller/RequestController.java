@@ -34,6 +34,7 @@ public class RequestController {
             arrayChatElements = ConfigReader.getChatElementsFromLinks(chatElementID, chatElements);
             if (arrayChatElements.length == 0) {
                 configFile = configPath + getScriptPath(chatElementID, "");
+                localeFile = configPath + getLocalePath(clickedMessagePayload.getLanguage(), chatElementID);
                 System.out.println("Try 2");
                 System.out.println(configFile + " " + localeFile);
                 chatElements = ConfigReader.readChatElementsFromConfig(configFile, localeFile);
