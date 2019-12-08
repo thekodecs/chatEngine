@@ -27,9 +27,13 @@ public class RequestController {
         String localeFile = configPath + getLocalePath(clickedMessagePayload.getLanguage(), chatElementID);
         ArrayList<ChatElement> chatElements = new ArrayList<>();
         try {
+            System.out.println("Try 1");
+            System.out.println(configFile + " " + localeFile);
             chatElements = ConfigReader.readChatElementsFromConfig(configFile, localeFile);
             if (chatElements.get(0).getLinksID().length == 0) {
                 configFile = configPath + getScriptPath(chatElementID, "");
+                System.out.println("Try 2");
+                System.out.println(configFile + " " + localeFile);
                 chatElements = ConfigReader.readChatElementsFromConfig(configFile, localeFile);
             }
         }
