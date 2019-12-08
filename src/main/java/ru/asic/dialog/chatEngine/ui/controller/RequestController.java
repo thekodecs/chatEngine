@@ -25,7 +25,7 @@ public class RequestController {
         String configPath = "../chatEngine/src/main/java/ru/asic/dialog/chatEngine/ui/config/";
         String configFile = configPath + getScriptPath(chatElementID, "begin");
         String localeFile = configPath + getLocalePath(clickedMessagePayload.getLanguage(), chatElementID);
-        ArrayList<ChatElement> chatElements = null;
+        ArrayList<ChatElement> chatElements = new ArrayList<>();
         try {
             chatElements = ConfigReader.readChatElementsFromConfig(configFile, localeFile);
             if (chatElements.get(0).getLinksID().length == 0) {
