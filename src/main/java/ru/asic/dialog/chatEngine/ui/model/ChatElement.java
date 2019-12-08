@@ -34,4 +34,5 @@ public class ChatElement {
     public String toString() {
         return id + " " + type + " " + text + " " + Arrays.toString(linksID);
     }
+
 }

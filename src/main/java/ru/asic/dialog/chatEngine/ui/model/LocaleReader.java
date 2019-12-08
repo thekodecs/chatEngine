@@ -37,4 +37,5 @@ public class LocaleReader {
         String filename = String.format("locale_%s_%s.cfg", product,languageCode);
         return localeFolderPath + filename;
     }
+
 }

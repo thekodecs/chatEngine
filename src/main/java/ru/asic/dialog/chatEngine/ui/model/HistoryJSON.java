@@ -9,7 +9,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class HistoryJSON {
-       private static String historyFilePath = "../chatEngine/src/main/java/ru/asic/dialog/chatEngine/ui/controller/users_history.log";
+       private static String historyFilePath = "/git/dialog/chatEngine/users_history.log"; //"../chatEngine/src/main/java/ru/asic/dialog/chatEngine/ui/controller/users_history.log";
 
     public static void appendToHistory (HistoryPayload payload) throws IOException {
         BufferedWriter historyWriter = new BufferedWriter(new FileWriter(historyFilePath, true));
@@ -33,7 +33,6 @@ public class HistoryJSON {
         System.out.println(mapper.toString());
         return historyList;
     }
-
 
 
 

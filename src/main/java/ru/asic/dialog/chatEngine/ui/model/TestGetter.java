@@ -18,4 +18,5 @@ public class TestGetter {
             System.out.println(chatElement.toString());
         }
     }
+
 }
