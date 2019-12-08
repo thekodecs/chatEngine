@@ -52,8 +52,8 @@ public class RequestController {
     public Container initLanguage() {
         ChatElement resultElement = new ChatElement("message", "init","Выберите язык / Choose your language", new String[] {"init"});
         ChatElement[] elements = new ChatElement[2];
-        elements[0] = new ChatElement("button", "RU", "Русский", new String[] {"init"});
-        elements[1] = new ChatElement("button", "EN", "English", new String[] {"init"});
+        elements[0] = new ChatElement("button", "init_RU", "Русский", new String[] {"init_init"});
+        elements[1] = new ChatElement("button", "init_EN", "English", new String[] {"init_init"});
         String configFolderPath;
         String scriptInitFilename;
 
