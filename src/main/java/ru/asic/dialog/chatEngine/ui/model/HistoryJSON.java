@@ -13,6 +13,7 @@ public class HistoryJSON {
 
     public static void appendToHistory (HistoryPayload payload) throws IOException {
         BufferedWriter historyWriter = new BufferedWriter(new FileWriter(historyFilePath, true));
+        System.out.println("trying to write string " + payload.toString() + " in file: " + historyFilePath);
         historyWriter.write(payload.toString() + ",\r\n");
         historyWriter.close();
     }
