@@ -1,2 +1,3 @@
 {"language":"En","type":"MESSAGE","messageId":"init_init","messageReceivedAt":"1575796898841","messageText":"Выберите язык / Choose your language","chatElementId":"init_EN","userAnswerText":"English"},
 {"language":"En","type":"MESSAGE","messageId":"init_product","messageReceivedAt":"1575797149460","messageText":"Which product do you want to acquire?","chatElementId":"init_card","userAnswerText":"Credit card"},
+{"language":"En","type":"MESSAGE","messageId":"card_productConfirm","messageReceivedAt":"1575798149460","messageText":"Do you want to receive a banking card?","chatElementId":"card_productConfirmNo","userAnswerText":"No,i've changed my mind"},
