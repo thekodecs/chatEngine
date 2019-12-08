@@ -29,3 +29,4 @@ build/
 
 ### VS Code ###
 .vscode/
+/src/main/java/ru/asic/dialog/chatEngine/ui/controller/users_history.log

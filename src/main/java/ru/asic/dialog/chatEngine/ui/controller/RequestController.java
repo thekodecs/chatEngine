@@ -1,10 +1,7 @@
 package ru.asic.dialog.chatEngine.ui.controller;
 
 import org.springframework.web.bind.annotation.*;
-import ru.asic.dialog.chatEngine.ui.model.ChatElement;
-import ru.asic.dialog.chatEngine.ui.model.Container;
-import ru.asic.dialog.chatEngine.ui.model.HistoryJSON;
-import ru.asic.dialog.chatEngine.ui.model.LocaleReader;
+import ru.asic.dialog.chatEngine.ui.model.*;
 import ru.asic.dialog.chatEngine.ui.model.payloads.HistoryPayload;
 
 import java.io.IOException;
@@ -35,6 +32,12 @@ public class RequestController {
 
         return new Container(resultElement, elements);
     }
+
+//    @PostMapping(path="/history")
+//    public Container sendHistoryContainer(@RequestBody LocateParams langPayload){
+//        // TODO собрать в json все строки или часть строк и отправить согласно ворда. (return)
+//        return new Container();
+//    }
 
     @PostMapping(path="/test")
     public Container initTest() {
