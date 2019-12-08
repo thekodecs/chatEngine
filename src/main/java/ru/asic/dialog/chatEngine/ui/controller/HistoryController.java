@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
-import ru.asic.dialog.chatEngine.ui.model.HistoryContainer;
 import ru.asic.dialog.chatEngine.ui.model.HistoryJSON;
 import ru.asic.dialog.chatEngine.ui.model.LocateParams;
 import ru.asic.dialog.chatEngine.ui.model.payloads.HistoryPayload;
@@ -17,14 +16,14 @@ import java.util.ArrayList;
 @RequestMapping("history")
 public class HistoryController {
     @PostMapping()
-    public HistoryContainer sendHistoryContainer(@RequestBody LocateParams langPayload){
+    public ArrayList<HistoryPayload> sendHistoryContainer(@RequestBody LocateParams langPayload){
         ArrayList<HistoryPayload> payloads = null;
         try {
             payloads = HistoryJSON.historyToJson();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return new HistoryContainer(payloads);
+        return payloads;
     }
 
 }
