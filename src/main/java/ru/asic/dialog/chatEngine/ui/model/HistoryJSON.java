@@ -12,6 +12,7 @@ public class HistoryJSON {
        private static String historyFilePath = "../chatEngine/src/main/java/ru/asic/dialog/chatEngine/ui/controller/users_history.log"; //"/git/dialog/chatEngine/users_history.log"; //"../chatEngine/src/main/java/ru/asic/dialog/chatEngine/ui/controller/users_history.log";
 
     public static void appendToHistory (HistoryPayload payload) throws IOException {
+        File history = new File (historyFilePath);
         BufferedWriter historyWriter = new BufferedWriter(new FileWriter(historyFilePath, true));
         System.out.println("trying to write string " + payload.toString() + " in file: " + historyFilePath);
         historyWriter.write(payload.toString() + ",\r\n");
