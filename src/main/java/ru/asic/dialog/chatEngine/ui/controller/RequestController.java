@@ -34,8 +34,9 @@ public class RequestController {
             chatElements = ConfigReader.readChatElementsFromConfig(configFile, localeFile);
         }
         catch (IOException e) {}
-
-        return new Container(ConfigReader.getChatElementByID(chatElementID, chatElements), ConfigReader.getChatElementsFromLinks(chatElementID, chatElements));
+        ChatElement chatElement = ConfigReader.getChatElementByID(chatElementID, chatElements);
+        if (chatElement == null) {chatElement = new ChatElement();}
+        return new Container(chatElement, ConfigReader.getChatElementsFromLinks(chatElementID, chatElements));
     }
 
 //    public static void main (String[] args) {

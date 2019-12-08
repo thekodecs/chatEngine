@@ -8,6 +8,13 @@ public class ChatElement {
     private String text;
     private String[] linksID;
 
+    public ChatElement() {
+        this.type = "";
+        this.id = "";
+        this.text = "";
+        this.linksID = new String[0];
+    }
+
     public ChatElement(String type, String id, String text, String[] callers) {
         this.type = type;
         this.id = id;
