@@ -1,5 +1,6 @@
 package ru.asic.dialog.chatEngine.ui.controller;
 
+import org.springframework.objenesis.SpringObjenesis;
 import org.springframework.web.bind.annotation.*;
 import ru.asic.dialog.chatEngine.ui.model.*;
 import ru.asic.dialog.chatEngine.ui.model.payloads.HistoryPayload;
@@ -21,16 +22,26 @@ public class RequestController {
             e.printStackTrace();
         }
         String chatElementID = clickedMessagePayload.getChatElementId();
-        String configFile = "../chatEngine/src/main/java/ru/asic/dialog/chatEngine/ui/config/script_card.cfg";
-        String localeFile = "../chatEngine/src/main/java/ru/asic/dialog/chatEngine/ui/config/locale_card_Ru.cfg";
+        String configPath = "../chatEngine/src/main/java/ru/asic/dialog/chatEngine/ui/config/";
+        String configFile = configPath + getScriptPath(chatElementID, "begin");
+        String localeFile = configPath + getLocalePath(clickedMessagePayload.getLanguage(), chatElementID);
         ArrayList<ChatElement> chatElements = null;
         try {
+            chatElements = ConfigReader.readChatElementsFromConfig(configFile, localeFile);
+            if (chatElements.get(0).getLinksID().length == 0) {
+                configFile = configPath + getScriptPath(chatElementID, "");
+            }
             chatElements = ConfigReader.readChatElementsFromConfig(configFile, localeFile);
         }
         catch (IOException e) {}
 
         return new Container(ConfigReader.getChatElementByID(chatElementID, chatElements), ConfigReader.getChatElementsFromLinks(chatElementID, chatElements));
     }
+
+//    public static void main (String[] args) {
+//        System.out.println(getScriptPath("init_card", "begin") + " " + getScriptPath("init_card", ""));
+//        System.out.println(getLocalePath("Ru", "init_card"));
+//    }
 
     @PostMapping(path="/init")
     public Container initLanguage() {
@@ -62,6 +73,22 @@ public class RequestController {
         return "there is should be a message with id = " + messageId + ", which is translated to " + langSetting;
     }
 
+    private static String getScriptPath(String elementId, String position) {
+        String product;
+        if (position.equals("begin")) {
+            product = elementId.split("_")[0];
 
+        } else {
+            product = elementId.split("_")[1];
+        }
+        String fileName = String.format("script_%s.cfg", product);
+        return fileName;
+    }
+
+    private static String getLocalePath (String languageCode, String elementId) {
+        String product = elementId.split("_")[0];
+        String filename = String.format("locale_%s_%s.cfg", product,languageCode);
+        return filename;
+    }
 
 }
