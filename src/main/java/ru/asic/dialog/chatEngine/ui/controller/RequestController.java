@@ -32,7 +32,7 @@ public class RequestController {
             System.out.println(configFile + " " + localeFile);
             chatElements = ConfigReader.readChatElementsFromConfig(configFile, localeFile);
             arrayChatElements = ConfigReader.getChatElementsFromLinks(chatElementID, chatElements);
-            if (arrayChatElements[0].getLinksID().length == 0) {
+            if (arrayChatElements.length == 0) {
                 configFile = configPath + getScriptPath(chatElementID, "");
                 System.out.println("Try 2");
                 System.out.println(configFile + " " + localeFile);
