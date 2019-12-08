@@ -19,8 +19,8 @@ public class HistoryPayload {
         return chatElementId;
     }
 
-    public void setChatElementId(String buttonId) {
-        this.chatElementId = buttonId;
+    public void setChatElementId(String chatElementId) {
+        this.chatElementId = chatElementId;
     }
 
     public String getUserAnswerText() {

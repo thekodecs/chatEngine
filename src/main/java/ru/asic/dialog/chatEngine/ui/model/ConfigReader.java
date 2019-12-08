@@ -9,14 +9,14 @@ import javax.print.DocFlavor;
 public class ConfigReader {
     private String configPath;
     private String localePath;
-    private static String folderPath = "";
+    private String folderPath = "";
 
     public ConfigReader(String configPath, String localePath) {
         this.configPath = configPath;
         this.localePath = localePath;
     }
 
-    private static String generateLocaleFilePath (String languageCode, String elementId) {
+    private String generateLocaleFilePath (String languageCode, String elementId) {
         String product = elementId.split("_")[0];
         String filename = String.format("locale_%s_%s.cfg", product,languageCode);
         return folderPath + filename;
