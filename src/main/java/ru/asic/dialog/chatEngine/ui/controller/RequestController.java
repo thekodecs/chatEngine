@@ -24,7 +24,7 @@ public class RequestController {
         String chatElementID = clickedMessagePayload.getChatElementId();
         String configPath = "../chatEngine/src/main/java/ru/asic/dialog/chatEngine/ui/config/";
         String configFile = configPath + getScriptPath(chatElementID, "begin");
-        String localeFile = configPath + getLocalePath(clickedMessagePayload.getLanguage(), chatElementID);
+        String localeFile = configPath + getLocalePath(clickedMessagePayload.getLanguage(), chatElementID, "begin");
         ArrayList<ChatElement> chatElements = new ArrayList<>();
         ChatElement[] arrayChatElements;
         try {
@@ -34,7 +34,7 @@ public class RequestController {
             arrayChatElements = ConfigReader.getChatElementsFromLinks(chatElementID, chatElements);
             if (arrayChatElements.length == 0) {
                 configFile = configPath + getScriptPath(chatElementID, "");
-                localeFile = configPath + getLocalePath(clickedMessagePayload.getLanguage(), chatElementID);
+                localeFile = configPath + getLocalePath(clickedMessagePayload.getLanguage(), chatElementID, "");
                 System.out.println("Try 2");
                 System.out.println(configFile + " " + localeFile);
                 chatElements = ConfigReader.readChatElementsFromConfig(configFile, localeFile);
@@ -93,8 +93,14 @@ public class RequestController {
         return fileName;
     }
 
-    private static String getLocalePath (String languageCode, String elementId) {
-        String product = elementId.split("_")[0];
+    private static String getLocalePath (String languageCode, String elementId, String position) {
+        String product;
+        if (position.equals("begin")) {
+            product = elementId.split("_")[0];
+
+        } else {
+            product = elementId.split("_")[1];
+        }
         String filename = String.format("locale_%s_%s.cfg", product,languageCode);
         return filename;
     }
