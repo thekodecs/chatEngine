@@ -11,8 +11,8 @@ public class TestGetter {
     }
 
     public static void main(String[] args) throws IOException{
-        String fileName = "../chatEngine/src/main/java/ru/asic/dialog/chatEngine/ui/config/script_card.cfg";
-        String fileLoc = "../chatEngine/src/main/java/ru/asic/dialog/chatEngine/ui/config/locale_card_Ru.cfg";
+        String fileName = "../chatEngine/src/main/java/ru/asic/dialog/chatEngine/ui/config/script_init.cfg";
+        String fileLoc = "../chatEngine/src/main/java/ru/asic/dialog/chatEngine/ui/config/locale_init_Ru.cfg";
         ArrayList<ChatElement> chatElements = ConfigReader.readChatElementsFromConfig(fileName, fileLoc);
         for (ChatElement chatElement: chatElements) {
             System.out.println(chatElement.toString());
