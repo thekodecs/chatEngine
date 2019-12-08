@@ -2,9 +2,9 @@ package ru.asic.dialog.chatEngine.ui.model;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 public class LocaleReader {
 
@@ -12,7 +12,7 @@ public class LocaleReader {
 
     public static String getTranslationById (String languageCode, String elementId) throws IOException {
         String localeFilePath = generateLocaleFilePath(languageCode, elementId);
-        BufferedReader fileReader = new BufferedReader(new FileReader(localeFilePath));
+        BufferedReader fileReader = new BufferedReader(new InputStreamReader(new FileInputStream(localeFilePath), StandardCharsets.UTF_8));
         ObjectMapper mapper = new ObjectMapper();
         String result = "id не найден в файле - " + localeFilePath;
         String line = "";
