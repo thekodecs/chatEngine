@@ -1,6 +1,8 @@
 package ru.asic.dialog.chatEngine.ui.model;
 
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -26,7 +28,7 @@ public class ConfigReader {
         ArrayList<ChatElement> chatElements = new ArrayList<>();
         ArrayList<ItemParams> items = new ArrayList<>();
         ArrayList<LocateParams> locates = new ArrayList<>();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(configPath)));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(configPath), StandardCharsets.UTF_8));
         ObjectMapper mapper = new ObjectMapper();
         while (reader.ready()) {
             String jsonString = reader.readLine();
@@ -35,7 +37,7 @@ public class ConfigReader {
             }
         }
         reader.close();
-        reader = new BufferedReader(new InputStreamReader(new FileInputStream(localePath)));
+        reader = new BufferedReader(new InputStreamReader(new FileInputStream(localePath), StandardCharsets.UTF_8));
         while (reader.ready()) {
             String jsonString = reader.readLine();
             if (!jsonString.isEmpty()) {
