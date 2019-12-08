@@ -3,18 +3,25 @@ package ru.asic.dialog.chatEngine.ui.controller;
 import org.springframework.web.bind.annotation.*;
 import ru.asic.dialog.chatEngine.ui.model.ChatElement;
 import ru.asic.dialog.chatEngine.ui.model.Container;
-import ru.asic.dialog.chatEngine.ui.model.HistoryPayload;
-import ru.asic.dialog.chatEngine.ui.model.TypeOfElement;
+import ru.asic.dialog.chatEngine.ui.model.HistoryJSON;
+import ru.asic.dialog.chatEngine.ui.model.LocaleReader;
+import ru.asic.dialog.chatEngine.ui.model.payloads.HistoryPayload;
 
-import java.awt.*;
+import java.io.IOException;
 
 @RestController
 @RequestMapping("request") // http://localhost:8080/request
 public class RequestController {
 
     @PostMapping()
-    public void appendMessageToHistory (@RequestBody HistoryPayload clickedMessagePayload) {
-        System.out.println(clickedMessagePayload.getMessageReceivedAt());
+    public void onUserClick (@RequestBody HistoryPayload clickedMessagePayload) {
+        try {
+            clickedMessagePayload.setMessageText(LocaleReader.getTranslationById(clickedMessagePayload.getLanguage(), clickedMessagePayload.getMessageId()));
+            clickedMessagePayload.setGetButtonText(LocaleReader.getTranslationById(clickedMessagePayload.getLanguage(), clickedMessagePayload.getButtonId()));
+            HistoryJSON.appendToHistory(clickedMessagePayload);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @PostMapping(path="/init")
