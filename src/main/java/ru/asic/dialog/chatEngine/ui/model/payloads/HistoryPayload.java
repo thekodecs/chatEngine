@@ -12,15 +12,15 @@ public class HistoryPayload {
     private String messageId;
     private String messageReceivedAt = new Date().getTime() + "";
     private String messageText = "";
-    private String buttonId;
+    private String chatElementId;
     private String userAnswerText;
 
-    public String getButtonId() {
-        return buttonId;
+    public String getChatElementId() {
+        return chatElementId;
     }
 
-    public void setButtonId(String buttonId) {
-        this.buttonId = buttonId;
+    public void setChatElementId(String buttonId) {
+        this.chatElementId = buttonId;
     }
 
     public String getUserAnswerText() {

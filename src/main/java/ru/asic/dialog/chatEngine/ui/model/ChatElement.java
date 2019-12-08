@@ -27,7 +27,7 @@ public class ChatElement {
         return text;
     }
 
-    public String[] getCallers() {
+    public String[] getLinksID() {
         return linksID;
     }
 
