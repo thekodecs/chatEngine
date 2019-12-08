@@ -18,13 +18,13 @@ public class LocaleReader {
         String line = "";
         while (fileReader.ready()) {
             if (!(line = fileReader.readLine()).isEmpty()) {
-                System.out.println(line);
+//                System.out.println(line);
                 LocateParams currentLine = new ObjectMapper().readValue(line, LocateParams.class);
                 if (currentLine.id.equals(elementId)) {
                     line = currentLine.text;
                     break;
                 }
-                System.out.println(currentLine);
+//                System.out.println(currentLine);
             }
         }
         fileReader.close();
