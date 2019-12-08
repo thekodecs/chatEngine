@@ -33,11 +33,7 @@ public class RequestController {
         return new Container(resultElement, elements);
     }
 
-//    @PostMapping(path="/history")
-//    public Container sendHistoryContainer(@RequestBody LocateParams langPayload){
-//        // TODO собрать в json все строки или часть строк и отправить согласно ворда. (return)
-//        return new Container();
-//    }
+
 
     @PostMapping(path="/test")
     public Container initTest() {
@@ -58,5 +54,6 @@ public class RequestController {
                                  @PathVariable("messageId") String messageId) {
         return "there is should be a message with id = " + messageId + ", which is translated to " + langSetting;
     }
+
 
 }
