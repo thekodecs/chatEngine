@@ -30,8 +30,8 @@ public class RequestController {
             chatElements = ConfigReader.readChatElementsFromConfig(configFile, localeFile);
             if (chatElements.get(0).getLinksID().length == 0) {
                 configFile = configPath + getScriptPath(chatElementID, "");
+                chatElements = ConfigReader.readChatElementsFromConfig(configFile, localeFile);
             }
-            chatElements = ConfigReader.readChatElementsFromConfig(configFile, localeFile);
         }
         catch (IOException e) {}
         ChatElement chatElement = ConfigReader.getChatElementByID(chatElementID, chatElements);
