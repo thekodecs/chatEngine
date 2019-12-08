@@ -1,2 +1,2 @@
 {"language":"En","type":"MESSAGE","messageId":"init_init","messageReceivedAt":"1575796898841","messageText":"Выберите язык / Choose your language","chatElementId":"init_EN","userAnswerText":"English"},
-{"language":"En","type":"MESSAGE","messageId":"init_product","messageReceivedAt":"1575796946300","messageText":"Which product do you want to acquire?","chatElementId":"init_card","userAnswerText":"Credit card"},
+{"language":"En","type":"MESSAGE","messageId":"init_product","messageReceivedAt":"1575797149461","messageText":"Which product do you want to acquire?","chatElementId":"init_card","userAnswerText":"Credit card"},
