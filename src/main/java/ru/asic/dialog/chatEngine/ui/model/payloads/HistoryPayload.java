@@ -2,11 +2,7 @@ package ru.asic.dialog.chatEngine.ui.model.payloads;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import ru.asic.dialog.chatEngine.ui.model.ConfigReader;
-import ru.asic.dialog.chatEngine.ui.model.LocaleReader;
 
-import java.io.IOException;
 import java.util.Date;
 
 public class HistoryPayload {
@@ -17,7 +13,7 @@ public class HistoryPayload {
     private String messageReceivedAt = new Date().getTime() + "";
     private String messageText = "";
     private String buttonId;
-    private String getButtonText;
+    private String userAnswerText;
 
     public String getButtonId() {
         return buttonId;
@@ -27,12 +23,12 @@ public class HistoryPayload {
         this.buttonId = buttonId;
     }
 
-    public String getGetButtonText() {
-        return getButtonText;
+    public String getUserAnswerText() {
+        return userAnswerText;
     }
 
-    public void setGetButtonText(String getButtonText) {
-        this.getButtonText = getButtonText;
+    public void setUserAnswerText(String userAnswerText) {
+        this.userAnswerText = userAnswerText;
     }
 
     public void setMessageText(String messageText) {

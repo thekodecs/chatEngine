@@ -14,7 +14,7 @@ public class RequestController {
     public void onUserClick (@RequestBody HistoryPayload clickedMessagePayload) {
         try {
             clickedMessagePayload.setMessageText(LocaleReader.getTranslationById(clickedMessagePayload.getLanguage(), clickedMessagePayload.getMessageId()));
-            clickedMessagePayload.setGetButtonText(LocaleReader.getTranslationById(clickedMessagePayload.getLanguage(), clickedMessagePayload.getButtonId()));
+            clickedMessagePayload.setUserAnswerText(LocaleReader.getTranslationById(clickedMessagePayload.getLanguage(), clickedMessagePayload.getButtonId()));
             HistoryJSON.appendToHistory(clickedMessagePayload);
         } catch (IOException e) {
             e.printStackTrace();
