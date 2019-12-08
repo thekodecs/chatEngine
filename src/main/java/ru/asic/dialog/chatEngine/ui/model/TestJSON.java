@@ -4,6 +4,7 @@ public class TestJSON {
     public String id;
     public String type;
     public String[] linksID;
+
 }
 
 

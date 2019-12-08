@@ -4,4 +4,5 @@ public class ItemParams {
     public String id;
     public String type;
     public String[] linksID;
+
 }

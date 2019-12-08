@@ -4,4 +4,5 @@ public enum TypeOfElement {
     MESSAGE,
     BUTTON,
     TEXT_EDIT
+
 }
