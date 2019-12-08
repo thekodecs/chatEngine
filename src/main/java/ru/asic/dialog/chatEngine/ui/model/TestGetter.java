@@ -17,6 +17,12 @@ public class TestGetter {
         for (ChatElement chatElement: chatElements) {
             System.out.println(chatElement.toString());
         }
+        ChatElement chatElement = ConfigReader.getChatElementByID("card_cardType", chatElements);
+        System.out.println(chatElement);
+        ChatElement[] elems = ConfigReader.getChatElementsFromLinks("card_cardType", chatElements);
+        for (ChatElement el:elems) {
+            System.out.println(el);
+        }
     }
 
 }

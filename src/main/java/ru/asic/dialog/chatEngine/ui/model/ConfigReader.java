@@ -1,12 +1,9 @@
 package ru.asic.dialog.chatEngine.ui.model;
 
 import java.io.*;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import javax.print.DocFlavor;
 
 public class ConfigReader {
     private String configPath;
@@ -18,7 +15,7 @@ public class ConfigReader {
         this.localePath = localePath;
     }
 
-    private String generateLocaleFilePath (String languageCode, String elementId) {
+    private String generateFilePath (String languageCode, String elementId) {
         String product = elementId.split("_")[0];
         String filename = String.format("locale_%s_%s.cfg", product,languageCode);
         return folderPath + filename;
