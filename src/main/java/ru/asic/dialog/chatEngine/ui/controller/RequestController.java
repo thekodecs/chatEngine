@@ -26,11 +26,13 @@ public class RequestController {
         String configFile = configPath + getScriptPath(chatElementID, "begin");
         String localeFile = configPath + getLocalePath(clickedMessagePayload.getLanguage(), chatElementID);
         ArrayList<ChatElement> chatElements = new ArrayList<>();
+        ChatElement[] arrayChatElements;
         try {
             System.out.println("Try 1");
             System.out.println(configFile + " " + localeFile);
             chatElements = ConfigReader.readChatElementsFromConfig(configFile, localeFile);
-            if (chatElements.get(0).getLinksID().length == 0) {
+            arrayChatElements = ConfigReader.getChatElementsFromLinks(chatElementID, chatElements);
+            if (arrayChatElements[0].getLinksID().length == 0) {
                 configFile = configPath + getScriptPath(chatElementID, "");
                 System.out.println("Try 2");
                 System.out.println(configFile + " " + localeFile);
@@ -40,7 +42,7 @@ public class RequestController {
         catch (IOException e) {}
         ChatElement chatElement = ConfigReader.getChatElementByID(chatElementID, chatElements);
         if (chatElement == null) {chatElement = new ChatElement();}
-        return new Container(chatElement, ConfigReader.getChatElementsFromLinks(chatElementID, chatElements));
+        return new Container(chatElement, ConfigReader.getChatElementsFromLinks(chatElement.getId(), chatElements));
     }
 
 //    public static void main (String[] args) {

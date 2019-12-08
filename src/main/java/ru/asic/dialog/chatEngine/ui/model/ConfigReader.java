@@ -64,11 +64,13 @@ public class ConfigReader {
     }
 
     public static ChatElement getChatElementByID (String id, ArrayList<ChatElement> chatElements) {
-        ChatElement chatElement = null;
+        ChatElement chatElement = new ChatElement();
         for (ChatElement element: chatElements) {
-            if (element.getId().equals(id)) {
-                chatElement = element;
-                break;
+            for (String linksID: element.getLinksID()) {
+                if (linksID.equals(id)) {
+                    chatElement = element;
+                    break;
+                }
             }
         }
         return chatElement;
